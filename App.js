@@ -1,12 +1,21 @@
-import {View, Text, StyleSheet} from "react-native";
+import {Text} from "react-native";
+import styled from "styled-components/native";
 
 export default function App() {
 
     return (
-        <View>
+        <Container>
             <Text>Hello World</Text>
-        </View>
+        </Container>
     );
 }
 
-const styles = StyleSheet.create({});
+const Container = styled.View`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: chocolate;
+    width: 100%;
+    height: 100%;
+`
+
