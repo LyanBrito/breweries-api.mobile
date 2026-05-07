@@ -1,9 +1,11 @@
-import { Linking } from "react-native";
+import React from "react";
+import {Linking} from "react-native";
 import styled from "styled-components/native";
 
-export default function Card({ brew, isFavorite, onToggleFavorite }) {
+export default function Card({brew, isFavorite, onToggleFavorite}) {
     return (
         <CardContainer>
+
             <Header>
                 <BreweryName>{brew.name}</BreweryName>
 
@@ -38,29 +40,26 @@ export default function Card({ brew, isFavorite, onToggleFavorite }) {
             </InfoSection>
 
             {brew.website_url && (
-                <StyledButton
-                    onPress={() => Linking.openURL(brew.website_url)}
-                >
+                <StyledButton onPress={() => Linking.openURL(brew.website_url)}>
                     <ButtonText>VISIT WEBSITE</ButtonText>
                 </StyledButton>
             )}
+
         </CardContainer>
     );
 }
 
 const CardContainer = styled.View`
     width: 90%;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 16px;
     padding: 20px;
-
     elevation: 5;
-    shadow-color: #000;
 `;
+
 const Header = styled.View`
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 15px;
 `;
 
@@ -71,22 +70,19 @@ const RightHeader = styled.View`
 
 const BreweryName = styled.Text`
     flex: 1;
-    color: #1a1a1a;
     font-size: 20px;
     font-weight: 800;
 `;
 
 const TypeTag = styled.View`
-    background-color: #f0f0f0;
+    background-color: #eee;
     padding: 4px 10px;
     border-radius: 8px;
 `;
 
 const TypeText = styled.Text`
-    color: #666;
     font-size: 11px;
     font-weight: bold;
-    text-transform: uppercase;
 `;
 
 const FavoriteButton = styled.TouchableOpacity`
@@ -108,17 +104,13 @@ const InfoRow = styled.View`
 `;
 
 const Label = styled.Text`
-    color: #999;
     font-size: 12px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 2px;
+    color: #999;
 `;
 
 const Value = styled.Text`
-    color: #444;
     font-size: 15px;
-    font-weight: 500;
+    color: #444;
 `;
 
 const StyledButton = styled.TouchableOpacity`
@@ -131,7 +123,5 @@ const StyledButton = styled.TouchableOpacity`
 
 const ButtonText = styled.Text`
     color: white;
-    font-size: 14px;
     font-weight: bold;
-    letter-spacing: 1px;
 `;
