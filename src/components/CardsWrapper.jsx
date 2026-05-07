@@ -8,7 +8,7 @@ export default function CardsWrapper({favorites, toggleFavorite}) {
     const [page, setPage] = useState(1);
     const [brew, setBrew] = useState([]);
 
-    const ITEMS_PER_PAGE = 5;
+    const ITEMS_PER_PAGE = 3;
 
     useEffect(() => {
         axios.get("https://api.openbrewerydb.org/v1/breweries")
